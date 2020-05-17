@@ -26,8 +26,9 @@ if (process.env.NODE_ENV === "production") {
 require("./routes/api-routes.js")(app);
 
 // Connect to the Mongo DB
+const MONGODB_URI = "mongodb://heroku_clgfmzvr:ffvm81r7l8alca2du6002b0o4r@ds131814.mlab.com:31814/heroku_clgfmzvr"
 const mongoURI = "mongodb://localhost/googlebooksdb";
-mongoose.connect( process.env.MONGODB_URI || mongoURI, {
+mongoose.connect( MONGODB_URI || mongoURI, {
     useCreateIndex: true,
     useNewUrlParser: true
   })
